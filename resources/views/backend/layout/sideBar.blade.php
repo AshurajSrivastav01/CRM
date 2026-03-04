@@ -70,54 +70,93 @@
                     <a href="#" class="submenu-toggle">
                         <span>
                             <i class="bi bi-file-text"></i>
-                            Posts
+                            Product Management
                         </span>
                         <i class="bi bi-chevron-right dropdown-arrow"></i>
                     </a>
                     {{-- <div class="submenu active"> --}}
                     <div class="submenu ">
                         {{-- <a href="#" class="active">All Posts</a> --}}
-                        <a href="{{ url('/dashboard/all-post') }}" class="">All Posts</a>
-                        <a href="{{ url('/dashboard/add-post') }}">Add New Post</a>
-                        <a href="{{ url('/dashboard/categories') }}">Categories</a>
-                        <a href="{{ url('/dashboard/tags') }}">Tags</a>
+                        <a href="{{ url('/dashboard/all-post') }}" class="">Products</a>
+                        <a href="{{ url('/dashboard/add-post') }}">Categories</a>
+                        <a href="{{ url('/dashboard/categories') }}">Attributes</a>
+                        <a href="{{ url('/dashboard/tags') }}">Brands</a>
+                    </div>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" class="submenu-toggle">
+                        <span>
+                            <i class="bi bi-file-text"></i>
+                            Inventory
+                        </span>
+                        <i class="bi bi-chevron-right dropdown-arrow"></i>
+                    </a>
+                    {{-- <div class="submenu active"> --}}
+                    <div class="submenu ">
+                        {{-- <a href="#" class="active">All Posts</a> --}}
+                        <a href="{{ url('/dashboard/all-post') }}" class="">Stock</a>
+                        <a href="{{ url('/dashboard/add-post') }}">Warehouses</a>
+                        <a href="{{ url('/dashboard/categories') }}">Stock Transfer</a>
+                    </div>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" class="submenu-toggle">
+                        <span>
+                            <i class="bi bi-file-text"></i>
+                            Sales
+                        </span>
+                        <i class="bi bi-chevron-right dropdown-arrow"></i>
+                    </a>
+                    {{-- <div class="submenu active"> --}}
+                    <div class="submenu ">
+                        {{-- <a href="#" class="active">All Posts</a> --}}
+                        <a href="{{ url('/dashboard/all-post') }}" class="">Orders</a>
+                        <a href="{{ url('/dashboard/add-post') }}">Invoices</a>
                     </div>
                 </li>
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
                             <i class="bi bi-people"></i>
-                            Users
+                            HR
                         </span>
                         <i class="bi bi-chevron-right dropdown-arrow"></i>
                     </a>
                     <div class="submenu">
-                        <a href="{{ url('/dashboard/all-user') }}">All Users</a>
-                        <a href="{{ url('/dashboard/add-user') }}">Add New User</a>
-                        <a href="{{ url('/dashboard/user-roles') }}">User Roles</a>
+                        <a href="{{ url('/dashboard/all-user') }}">Employees</a>
+                        <a href="{{ url('/dashboard/all-post') }}" class="">Pending Employees</a>
+                        <a href="{{ url('/dashboard/user-roles') }}">Roles</a>
+                    </div>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" class="submenu-toggle">
+                        <span>
+                            <i class="bi bi-people"></i>
+                            People
+                        </span>
+                        <i class="bi bi-chevron-right dropdown-arrow"></i>
+                    </a>
+                    <div class="submenu">
+                        <a href="{{ url('/dashboard/all-user') }}">Customer</a>
+                        <a href="{{ url('/dashboard/all-post') }}" class="">Pending Employees</a>
+                        <a href="{{ url('/dashboard/user-roles') }}">Roles</a>
                     </div>
                 </li>
                 <li>
                     <a href="{{ url('/dashboard/comments') }}">
                         <span>
                             <i class="bi bi-chat-left-text"></i>
-                            Comments
+                            Reports
                         </span>
                     </a>
                 </li>
-                <li class="has-submenu">
-                    <a href="#" class="submenu-toggle">
+                <li>
+                    <a href="{{ url('/dashboard/comments') }}">
                         <span>
-                            <i class="bi bi-bar-chart"></i>
-                            Analytics
+                            <i class="bi bi-chat-left-text"></i>
+                            Settings
                         </span>
-                        <i class="bi bi-chevron-right dropdown-arrow"></i>
                     </a>
-                    <div class="submenu">
-                        <a href="#">Traffic Overview</a>
-                        <a href="#">Popular Content</a>
-                        <a href="#">Referral Sources</a>
-                    </div>
                 </li>
                 {{-- <li class="has-submenu">
                     <a href="#" class="submenu-toggle">

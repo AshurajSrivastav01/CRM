@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('public/asset/css/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/auth.css') }}">
 
 </head>
 <body>

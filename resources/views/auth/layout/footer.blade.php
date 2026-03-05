@@ -23,68 +23,6 @@
                     }
                 });
             });
-
-            // Form validation and submission
-            const forms = document.querySelectorAll('form');
-
-            forms.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    // Simple validation
-                    let isValid = true;
-                    const inputs = this.querySelectorAll('input[required]');
-
-                    inputs.forEach(input => {
-                        if (!input.value.trim()) {
-                            isValid = false;
-                            input.classList.add('is-invalid');
-                        } else {
-                            input.classList.remove('is-invalid');
-                        }
-                    });
-
-                    // Password confirmation validation
-                    const password = this.querySelector('#register-password');
-                    const confirmPassword = this.querySelector('#register-confirm-password');
-
-                    if (password && confirmPassword) {
-                        if (password.value !== confirmPassword.value) {
-                            isValid = false;
-                            confirmPassword.classList.add('is-invalid');
-                        } else {
-                            confirmPassword.classList.remove('is-invalid');
-                        }
-                    }
-
-                    // New password confirmation validation
-                    const newPassword = this.querySelector('#new-password');
-                    const confirmNewPassword = this.querySelector('#confirm-new-password');
-
-                    if (newPassword && confirmNewPassword) {
-                        if (newPassword.value !== confirmNewPassword.value) {
-                            isValid = false;
-                            confirmNewPassword.classList.add('is-invalid');
-                        } else {
-                            confirmNewPassword.classList.remove('is-invalid');
-                        }
-                    }
-
-                    if (isValid) {
-                        // Simulate successful form submission
-                        alert('Form submitted successfully!');
-                        this.reset();
-                    }
-                });
-            });
-
-            // Clear validation on input
-            const inputs = document.querySelectorAll('input');
-            inputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    this.classList.remove('is-invalid');
-                });
-            });
         });
     </script>
 </body>

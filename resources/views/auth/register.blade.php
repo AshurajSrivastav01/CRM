@@ -12,15 +12,13 @@
             <p class="text-muted">Join our community today</p>
         </div>
 
-        <form>
+        <form action="{{ url('/user/register') }}" method="post">
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="register-fname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="register-fname" placeholder="John" required>
-                </div>
+                <x-input type="text" label="First Name" id="register-fname" name="firstname" placeholder="John"/>
+
                 <div class="col-md-6 mb-3">
                     <label for="register-lname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="register-lname" placeholder="Doe" required>
+                    <input type="text" class="form-control" name="lastname" id="register-lname" placeholder="Doe" required>
                 </div>
             </div>
 

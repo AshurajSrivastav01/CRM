@@ -19,28 +19,39 @@
                 </div>
             @endif
 
-            <form>
+            <form action="{{ url('/user/login') }}"  method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="login-email" class="form-label">Email Address</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="login-email" placeholder="name@example.com" required>
+                        <input type="text" class="form-control" name="email" id="login-email" placeholder="name@example.com">
                         <span class="input-icon"><i class="bi bi-envelope"></i></span>
                     </div>
+                    <span class="text-danger">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
 
                 <div class="mb-3">
                     <label for="login-password" class="form-label">Password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+                        <input type="password" class="form-control" name="password" id="login-password" placeholder="Enter your password">
                         <span class="input-icon password-toggle" id="login-toggle">
                             <i class="bi bi-eye"></i>
                         </span>
                     </div>
+                    <span class="text-danger">
+                        @error('password')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
 
                 <div class="mb-3 d-flex justify-content-between align-items-center">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="remember-me">
+                        <input type="checkbox" class="form-check-input" name="rememberMe" id="remember-me">
                         <label class="form-check-label" for="remember-me">Remember me</label>
                     </div>
                     <a href="{{ url('/cb-user/forgot-password') }}" class="text-decoration-none">Forgot password?</a>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthonticationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,9 +15,9 @@ Route::view('/contact', 'frontend.contact', ['Title' => 'Contact - Inventory Man
 Route::view('/Categories', 'frontend.categories', ['Title' => 'Categories - Inventory Management']);
 
 // Authontication Routes
-Route::view('/cb-user/login', 'auth.login', ['Title' => 'User Login - Inventory Management']);
 Route::view('/cb-user/forgot-password', 'auth.forgotPassword', ['Title' => 'Forgot Password - Inventory Management']);
 Route::prefix('user')->group(function () {
+    Route::view('/login', 'auth.login', ['Title' => 'User Login - Inventory Management']);
     Route::view('/register', 'auth.register', ['Title' => 'User Register - Inventory Management']);
     Route::view('/reset-password', 'auth.changePassword', ['Title' => 'Reset Password - Inventory Management']);
 });
@@ -47,3 +48,6 @@ Route::view('/coming-soon', 'backend.comingSoon', ['Title' => 'Comming Soon - In
 Route::view('/not-found', 'backend.404', ['Title' => '404 Not Found - Inventory Management']);
 
 # -------------------------------------------- Backend Routs ------------------------------------------
+
+Route::post('/user/login', [AuthonticationController::class, 'login'], ['Title' => 'User Login - Inventory Management']);
+Route::post('/user/register', [AuthonticationController::class, 'register'], ['Title' => 'User Register - Inventory Management']);

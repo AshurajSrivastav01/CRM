@@ -13,47 +13,27 @@
         </div>
 
         <form action="{{ url('/user/register') }}" method="post">
+            @csrf
             <div class="row">
-                <x-input type="text" label="First Name" id="register-fname" name="firstname" placeholder="John"/>
-
-                <div class="col-md-6 mb-3">
-                    <label for="register-lname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="lastname" id="register-lname" placeholder="Doe" required>
-                </div>
+                <x-input divClass="col-md-6 mb-3" type="text" label="First Name" id="register-fname" name="firstname" placeholder="John"/>
+                <x-input divClass="col-md-6 mb-3" type="text" label="Last Name" id="register-lname" name="lastname" placeholder="Doe"/>
             </div>
 
-            <div class="mb-3">
-                <label for="register-email" class="form-label">Email Address</label>
-                <div class="input-group">
-                    <input type="email" class="form-control" id="register-email" placeholder="name@example.com" required>
-                    <span class="input-icon"><i class="bi bi-envelope"></i></span>
-                </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="register-password" class="form-label">Password</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="register-password" placeholder="Create a password" required>
-                    <span class="input-icon password-toggle" id="register-toggle">
-                        <i class="bi bi-eye"></i>
-                    </span>
-                </div>
-                <div class="form-text">Must be at least 8 characters</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="register-confirm-password" class="form-label">Confirm Password</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="register-confirm-password" placeholder="Confirm your password" required>
-                    <span class="input-icon password-toggle" id="confirm-toggle">
-                        <i class="bi bi-eye"></i>
-                    </span>
-                </div>
-            </div>
+            <x-input divClass="mb-3" type="text" label="Email Address" id="register-email" name="email" placeholder="name@example.com"/>
+            <x-input divClass="mb-3" type="password" label="Password" id="register-password" name="password" placeholder="Create a password"/>
+            <x-input type="password" label="Confirm Password" divClass="mb-3" id="register-password" name="password_confirm" placeholder="Comfirm your password"/>
 
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="terms-agree" required>
-                <label class="form-check-label" for="terms-agree">I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a></label>
+                <input type="checkbox" class="form-check-input" id="terms-agree" name="terms-agree">
+                <label class="form-check-label" for="terms-agree">
+                    I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+                </label>
+                <br>
+                <span class="text-danger">
+                    @error('terms-agree')
+                        {{ $message }}
+                    @enderror
+                </span>
             </div>
 
             <div class="mb-3">

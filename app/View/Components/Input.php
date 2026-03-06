@@ -17,14 +17,16 @@ class Input extends Component
     public $placeholder;
     public $type;
     public $name;
+    public $divClass;
 
-    public function __construct( $label = null ,  $id = null , $placeholder = null , $type = null , $name = null )
+    public function __construct( $label = null ,  $id = null , $placeholder = null , $type = null , $name = null, $divClass = null )
     {
         $this->label = $label;
         $this->id = $id;
         $this->placeholder = $placeholder;
         $this->type = $type;
         $this->name = $name;
+        $this->divClass = $divClass;
     }
 
     /**

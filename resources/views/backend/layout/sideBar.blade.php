@@ -13,37 +13,16 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('asset/css/backend/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/styles.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/allPost.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/allPost.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/addPost.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/addPost.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/sideBar.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/sideBar.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/dashboard.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/addUser.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/addUser.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/dashboard.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/userRoles.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/userRoles.css') }}">
-
     <link rel="stylesheet" href="{{ asset('asset/css/backend/allUser.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/allUser.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('asset/css/backend/tags.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/tags.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('asset/css/backend/categories.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/asset/css/backend/categories.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('asset/css/backend/tags.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('asset/css/backend/categories.css') }}"> --}}
 
 
     <!-- Place the first <script> tag in your HTML's <head> -->

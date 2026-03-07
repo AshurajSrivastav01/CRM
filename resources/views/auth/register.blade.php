@@ -58,7 +58,7 @@
         </div>
 
         <div class="auth-footer">
-            <p>Already have an account? <a href="{{ url('/cb-user/login') }}">Sign in</a></p>
+            <p>Already have an account? <a href="{{ url('/user/login') }}">Sign in</a></p>
         </div>
     </div>
 </div>

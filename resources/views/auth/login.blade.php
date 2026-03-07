@@ -13,12 +13,17 @@
                 <p class="text-muted">Sign in to your account</p>
             </div>
 
-            @if (session('messate'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
+            @if(session('error'))
+                <div class="alert alert-danger" style="width: fit-content;float: right;right: 20px;top: 14px;">
+                    {{ session('error') }}
                 </div>
             @endif
 
+            @if(session('success'))
+                <div class="alert alert-success" style="width: fit-content;float: right;right: 20px;top: 14px;">
+                    {{ session('success') }}
+                </div>
+            @endif
             <form action="{{ url('/user/login') }}"  method="post">
                 @csrf
                 <div class="mb-3">

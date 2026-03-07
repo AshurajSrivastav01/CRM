@@ -51,3 +51,4 @@ Route::view('/not-found', 'backend.404', ['Title' => '404 Not Found - Inventory 
 
 Route::post('/user/login', [AuthonticationController::class, 'login'], ['Title' => 'User Login - Inventory Management']);
 Route::post('/user/register', [AuthonticationController::class, 'register'], ['Title' => 'User Register - Inventory Management']);
+Route::post('/logout', [AuthonticationController::class, 'logout']);

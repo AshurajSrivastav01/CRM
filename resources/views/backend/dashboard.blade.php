@@ -1,5 +1,11 @@
 @extends('backend.layout.main')
 @section('main-container')
+
+    @if(session('success'))
+        <div class="alert alert-success" id="success-alert" style="width: fit-content;float: right;right: 20px;top: 14px;">
+            {{ session('success') }}
+        </div>
+    @endif
     <!-- Dashboard Content -->
     <div class="container-fluid p-4">
         <!-- Page Title -->
@@ -321,28 +327,15 @@
             }
         }
     });
-
-    // Sample notification on page load
-    setTimeout(() => {
-        // Create a Bootstrap toast notification
-        const toast = document.createElement('div');
-        toast.className = 'toast align-items-center text-white bg-primary border-0 position-fixed bottom-0 end-0 m-3';
-        toast.setAttribute('role', 'alert');
-        toast.setAttribute('aria-live', 'assertive');
-        toast.setAttribute('aria-atomic', 'true');
-        toast.innerHTML = `
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="bi bi-info-circle me-2"></i> Welcome to your Blog Admin Panel!
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        `;
-        document.body.appendChild(toast);
-
-        // Initialize and show the toast
-        const bsToast = new bootstrap.Toast(toast);
-        bsToast.show();
-    }, 1000);
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            let alertBox = document.getElementById("success-alert");
+            if (alertBox) {
+                alertBox.remove();
+            }
+        }, 3000);
+    });
 </script>
 @endsection

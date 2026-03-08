@@ -14,7 +14,7 @@
             </div>
 
             @if(session('error'))
-                <div class="alert alert-danger" style="width: fit-content;float: right;right: 20px;top: 14px;">
+                <div class="alert alert-danger" style="width: fit-content;top: 14px;">
                     {{ session('error') }}
                 </div>
             @endif

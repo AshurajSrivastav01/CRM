@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthonticationController;
-
+use App\Http\Controllers\DashboradController;
+use App\Http\Middleware\IsLogin;
+use App\Http\Middleware\IsEmployee;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -15,16 +17,18 @@ Route::view('/contact', 'frontend.contact', ['Title' => 'Contact - Inventory Man
 Route::view('/Categories', 'frontend.categories', ['Title' => 'Categories - Inventory Management']);
 
 // Authontication Routes
-Route::view('/cb-user/forgot-password', 'auth.forgotPassword', ['Title' => 'Forgot Password - Inventory Management']);
+Route::view('/user/forgot-password', 'auth.forgotPassword', ['Title' => 'Forgot Password - Inventory Management']);
 Route::prefix('user')->group(function () {
-    Route::view('/login', 'auth.login', ['Title' => 'User Login - Inventory Management']);
+    Route::get('/login', [AuthonticationController::class, 'index']);
     Route::view('/register', 'auth.register', ['Title' => 'User Register - Inventory Management']);
     Route::view('/reset-password', 'auth.changePassword', ['Title' => 'Reset Password - Inventory Management']);
 });
 
 // Admin Routes
-Route::view('/dashboard', 'backend.dashboard', ['Title' => 'Dashboard - Inventory Management']);
-Route::prefix('dashboard')->group(function () {
+Route::get('/dashboard', [DashboradController::class, 'index'])->middleware([IsLogin::class, IsEmployee::class]);
+Route::prefix('dashboard')
+    ->middleware([IsLogin::class, IsEmployee::class])
+    ->group(function () {
     // Post Management
     Route::view('/all-post', 'backend.post.allPost', ['Title' => 'All Post - Inventory Management']);
     Route::view('/add-post', 'backend.post.addPost', ['Title' => 'Add Post - Inventory Management']);

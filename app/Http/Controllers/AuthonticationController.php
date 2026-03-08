@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthonticationController extends Controller
 {
+    public function index(){
+        if(Auth::check()){
+            return redirect('/dashboard');
+        }
+
+        $Title = 'User Login - Inventory Management';
+
+        return view('auth.login', compact('Title'));
+    }
+
     public function login(Request $request){
         
         $validated = $request->validate([

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Role;
 
 class Employee extends Model
 {
@@ -21,4 +22,8 @@ class Employee extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
 }

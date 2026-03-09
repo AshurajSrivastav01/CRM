@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthonticationController;
 use App\Http\Controllers\DashboradController;
 use App\Http\Middleware\IsLogin;
 use App\Http\Middleware\IsEmployee;
+use App\Http\Middleware\RoleCheck;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,9 +27,9 @@ Route::prefix('user')->group(function () {
 });
 
 // Admin Routes
-Route::get('/dashboard', [DashboradController::class, 'index'])->middleware([IsLogin::class, IsEmployee::class]);
+Route::get('/dashboard', [DashboradController::class, 'index'])->middleware(['IsLogin', 'IsEmployee', 'RoleCheck:Super Admin']);
 Route::prefix('dashboard')
-    ->middleware([IsLogin::class, IsEmployee::class])
+    ->middleware(['IsLogin', 'IsEmployee', 'RoleCheck:Super Admin'])
     ->group(function () {
     // Post Management
     Route::view('/all-post', 'backend.post.allPost', ['Title' => 'All Post - Inventory Management']);

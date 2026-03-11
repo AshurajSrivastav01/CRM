@@ -1,0 +1,22 @@
+Dashboard
+Products
+    - All Products
+    - Categories
+    - Attributes
+    - Brands
+Inventory
+    - Stock
+    - Warehouses
+    - Adjustments
+Sales
+    - Orders
+    - Invoices
+Purchases
+    - Suppliers
+    - Purchase Orders
+People
+    - Customers
+    - Employees
+    - Roles
+Reports
+Settings

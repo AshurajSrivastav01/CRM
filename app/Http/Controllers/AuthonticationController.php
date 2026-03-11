@@ -36,8 +36,7 @@ class AuthonticationController extends Controller
         $validated = $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
-            'email' => 'required|email|unique:users,
-            email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:6',
             'password_confirm' => 'required|same:password',
             'terms-agree' => 'required'

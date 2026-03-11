@@ -15,7 +15,7 @@ class EmployeeSeeder extends Seeder
     {
         DB::table('employees')->insert([
             [
-                'company_id' => 1,
+                'company_id' => 9,
                 'role_id' => 1,
                 'first_name' => 'Ashuraj',
                 'last_name' => 'Srivastav',

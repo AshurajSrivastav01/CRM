@@ -50,4 +50,13 @@ class User extends Authenticatable
     public function employee(){
         return $this->hasOne(Employee::class);
     }
+
+    public function hasPermission($permission)
+    {
+        return $this->employee
+            ->role
+            ->permissions
+            ->pluck('slug')
+            ->contains($permission);
+    }
 }

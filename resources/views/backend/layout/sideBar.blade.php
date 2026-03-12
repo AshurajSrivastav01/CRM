@@ -37,6 +37,7 @@
         <div class="sidebar-menu">
             <ul>
                 {{-- <li class="active"> --}}
+                @if(auth()->user()->hasPermission('dashboard_access'))
                 <li class="active">
                     <a href="{{ url('/dashboard') }}">
                         <span>
@@ -45,6 +46,9 @@
                         </span>
                     </a>
                 </li>
+                @endif
+                
+                @if(auth()->user()->hasPermission('product_access'))
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
@@ -62,6 +66,9 @@
                         <a href="{{ url('/dashboard/tags') }}">Brands</a>
                     </div>
                 </li>
+                @endif
+
+                @if(auth()->user()->hasPermission('inventory_access'))
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
@@ -78,6 +85,8 @@
                         <a href="{{ url('/dashboard/categories') }}">Stock Transfer</a>
                     </div>
                 </li>
+                @endif
+                @if(auth()->user()->hasPermission('sales_access'))
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
@@ -93,6 +102,9 @@
                         <a href="{{ url('/dashboard/add-post') }}">Invoices</a>
                     </div>
                 </li>
+                @endif
+
+                @if(auth()->user()->hasPermission('hr_access'))
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
@@ -107,6 +119,9 @@
                         <a href="{{ url('/dashboard/user-roles') }}">Roles</a>
                     </div>
                 </li>
+                @endif
+
+                @if(auth()->user()->hasPermission('people_access'))
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>
@@ -121,6 +136,9 @@
                         <a href="{{ url('/dashboard/user-roles') }}">Roles</a>
                     </div>
                 </li>
+                @endif
+
+                @if(auth()->user()->hasPermission('reports_access'))
                 <li>
                     <a href="{{ url('/dashboard/comments') }}">
                         <span>
@@ -129,6 +147,8 @@
                         </span>
                     </a>
                 </li>
+                @endif
+                @if(auth()->user()->hasPermission('settings_access'))
                 <li>
                     <a href="{{ url('/dashboard/comments') }}">
                         <span>
@@ -137,6 +157,7 @@
                         </span>
                     </a>
                 </li>
+                @endif
                 {{-- <li class="has-submenu">
                     <a href="#" class="submenu-toggle">
                         <span>

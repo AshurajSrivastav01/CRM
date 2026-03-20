@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthonticationController;
 use App\Http\Controllers\DashboradController;
+use App\Http\Controllers\RoleController;
+
 use App\Http\Middleware\IsLogin;
 use App\Http\Middleware\IsEmployee;
 use App\Http\Middleware\RoleCheck;
@@ -40,7 +42,7 @@ Route::prefix('dashboard')
     // User Management
     Route::view('/all-user', 'backend.user.allUser', ['Title' => 'All User - Inventory Management']);
     Route::view('/add-user', 'backend.user.addUser', ['Title' => 'Add User - Inventory Management']);
-    Route::view('/user-roles', 'backend.user.userRoles', ['Title' => 'User Roles - Inventory Management']);
+    Route::get('/user-roles', [RoleController::class, 'index']);
 
     // Comments Management
     Route::view('/comments', 'backend.comments.comment', ['Title' => 'Comments - Inventory Management']);
